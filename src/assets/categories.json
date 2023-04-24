@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Herb"
+    },
+    {
+        "name": "Compound"
+    },
+    {
+        "name": "Target"
+    },
+    {
+        "name": "Disease"
+    },
+    {
+        "name": "Prescription"
+    }
+]

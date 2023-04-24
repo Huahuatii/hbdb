@@ -1,0 +1,21 @@
+
+[
+    {
+        "text": "D461\n胃癌\nNone\n",
+        "object": {
+            "disease_id": "D461",
+            "chinese_name": "胃癌",
+            "tcm_disease_id": null,
+            "english_name": null
+        }
+    },
+    {
+        "text": "D461\n胃癌\nNone\n",
+        "object": {
+            "disease_id": "D461",
+            "chinese_name": "胃癌",
+            "tcm_disease_id": null,
+            "english_name": null
+        }
+    }
+]
