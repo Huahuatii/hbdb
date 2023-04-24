@@ -183,14 +183,14 @@
 
 // table相关
 
-const filterTableData = computed(() =>
-  data.userList.filter((data: any) =>
-    !search.value ||
-    Object.values(data).some((value: any) =>
-      String(value).toLowerCase().includes(search.value.toLowerCase())
-    )
-  )
-)
+// const filterTableData = computed(() =>
+//   data.userList.filter((data: any) =>
+//     !search.value ||
+//     Object.values(data).some((value: any) =>
+//       String(value).toLowerCase().includes(search.value.toLowerCase())
+//     )
+//   )
+// )
 
 
 

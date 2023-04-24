@@ -26,8 +26,7 @@ import { ref } from 'vue';
 
 const store = useStore()
 
-let { response, active } = storeToRefs(store)
-
+let { response, active} = storeToRefs(store)
 </script>
 
 

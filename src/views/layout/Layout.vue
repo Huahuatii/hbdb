@@ -4,8 +4,8 @@
 
     <div class="navbar" :style="{ backgroundColor: bgColor }">
       <div class="mynav">
-        <img src="../../assets/logo6.svg" alt="logo" style="height:120px;margin-top:10px;">
-        <div style="width: 18%;"></div>
+        <img src="../../assets/logo4.png" alt="logo" style="height:60px;margin-left:50px;">
+        <div style="width: 12%;"></div>
         <div class="navbar-item" v-for="page in pages" :key="page.name" style="font-size: 28px;">
           <router-link :to="page.link" @mouseover="startAnimation(page.name)" @mouseleave="stopAnimation(page.name)"
             class="nav-item">{{
