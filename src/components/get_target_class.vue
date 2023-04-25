@@ -22,7 +22,7 @@ const pk = String(window.location.href.split('/')[6]);
 const source_type = String(window.location.href.split('/')[4]);
 const classes = ref([]);
 const getClasses = async () => {
-    const response = await axios.get(`http://192.168.30.33:8000/${source_type}/${pk}/graphic/`);
+    const response = await axios.get(`http://192.168.30.139:8000/${source_type}/${pk}/graphic/`);
     classes.value = response.data.bio_class_list;
 };
 let chartOptions = ref({});
@@ -32,7 +32,7 @@ let height_t = '700px';
 onMounted(getClasses);
 let res: any
 const handleClick = (c: any) => {
-    axios.post(`http://192.168.30.33:8000/${source_type}/${pk}/graphic/`, {
+    axios.post(`http://192.168.30.139:8000/${source_type}/${pk}/graphic/`, {
         bio_class: c
     }).then(respone => {
         res = respone.data.mulberryData;

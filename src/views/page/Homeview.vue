@@ -2,7 +2,7 @@
   <div class="container">
     <div style="width: 25%;"></div>
     <div class="text-box">
-      <h2>About <u>DPHIT</u></h2>
+      <h2 style="color:rgb(234, 238, 242)">About <u class='DPHIT'>DPHIT</u></h2>
       <p class="neirong">DPHIT is a comprehensive database based on the integration of big data of traditional Chinese medicine, including information on diseases, prescriptions, herbs, ingredients, targets, etc. The database includes a large number of prescriptions for modern pharmacological diseases treated with traditional Chinese medicine, including in-house preparations. Through frequency analysis, you can view their relationship with herbs, prescriptions, and targets. In addition, DPHIT has established a reliable herbal-formula-target information retrieval and management platform based on literature evidence, aiming to provide traditional Chinese medicine researchers with a comprehensive and reliable data resource to promote the modernization and industrialization of traditional Chinese medicine.
 </p>
     </div>
@@ -185,7 +185,12 @@ export default {
   /* 高度居中 */
   text-align: justify;
   max-width: 1000px;
-  margin: 5%;
+  margin: 5% auto;
+  /* 里面文字居中 */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
 
 .hp_fg {
@@ -201,7 +206,7 @@ h2 {
 }
 
 .neirong {
-  color: rgb(206, 215, 223);
+  color: rgb(226, 229, 233);
   font-size: 1.5rem;
 }
 
@@ -250,6 +255,12 @@ h2 {
   text-align: justify;
   width: 600px;
   margin: 15px;
+}
+.DPHIT{
+  font-size: 74px;
+  /* 文字颜色*/
+  color: #ffffff;
+
 }
 </style>
 

@@ -5,9 +5,16 @@
     </div>
     <el-divider border-style="double" class="mydivider" />
     <el-tabs tab-position='left' style="min-height: 250px" class="demo-tabs">
-      <el-tab-pane label="Browse DB">Users can browse the database by clicking the "Browse" button on the navigation bar and select a data type you want to view the records. For each component, the first column represents the IDs of the records, and the last column contains a hyperlink to the detailed page.</el-tab-pane>
-      <el-tab-pane label="Search DB">Users can search five types of data provided by the DPHIT database, including disease, prescription, herb, compound and target on the ‘Search’ page. The examples of key words allowed to be searched are displayed below the search box. For example, if you want to search for an disease, “胆囊炎” for example, you can type in “胆”, and it will show you a list of words related to it. </el-tab-pane>
-      <el-tab-pane label="Detail page">Users can enter the the details page from the ‘Browse’ page and ‘Search’ page by clicking the hyperlink of the certain item. </el-tab-pane>
+
+      <el-tab-pane label="Search">Users can search five types of data provided by the DPHIT database, including
+        disease, prescription, herb, compound and target on the 'Search' page. The examples of key words allowed to be
+        searched are displayed below the search box. For example, if you want to search for an disease, “胆囊炎” for example,
+        you can type in “胆”, and it will show you a list of words related to it. </el-tab-pane>
+      <el-tab-pane label="Browse">Users can browse the database by clicking the "Browse" button on the navigation bar
+        and select a data type you want to view the records. For each component, the first column represents the IDs of the records,
+        and the last column contains a hyperlink to the detailed page.</el-tab-pane>
+      <el-tab-pane label="Detail">Users can enter the the details page from the 'Browse' page and 'Search' page by
+        clicking the hyperlink of the certain item. </el-tab-pane>
       <!-- <el-tab-pane label="Task">Task</el-tab-pane> -->
     </el-tabs>
   </div>
@@ -32,6 +39,7 @@ import { ref } from 'vue'
   /* 隐藏x轴滚动条 */
   overflow-x: hidden;
 }
+
 .Manual_head {
   text-align: center;
   font-size: 30px;
@@ -43,6 +51,7 @@ import { ref } from 'vue'
   /* 字体颜色 */
   color: rgb(193, 100, 38);
 }
+
 :deep(.el-tabs__item) {
   /* background-color: rgb(234, 226, 204); */
   color: rgb(204, 152, 89);
@@ -50,6 +59,7 @@ import { ref } from 'vue'
   font-weight: bold;
   margin-top: 15px;
 }
+
 :deep(.is-active) {
   /* background-color: rgb(234, 226, 204); */
   color: rgb(222, 141, 43);
@@ -59,20 +69,23 @@ import { ref } from 'vue'
   font-weight: bold;
   margin-top: 15px;
 }
+
 :deep(.el-tabs__active-bar) {
   background-color: #8a1f1f;
 }
-:deep(.el-tabs__nav-scroll){
+
+:deep(.el-tabs__nav-scroll) {
   min-height: 400px;
 }
-:deep(.el-tab-pane){
+
+:deep(.el-tab-pane) {
   margin: 15px 15px 15px 15px;
-/* 文字两端对齐 */
-text-align: justify;
-font-size: 24px;
-/* 加粗一半 */
-font-weight: 500;
-/* 字体微软雅黑 */
-font-family: "Microsoft YaHei";
+  /* 文字两端对齐 */
+  text-align: justify;
+  font-size: 24px;
+  /* 加粗一半 */
+  font-weight: 500;
+  /* 字体微软雅黑 */
+  font-family: "Microsoft YaHei";
 }
 </style>

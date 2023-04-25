@@ -157,7 +157,7 @@
     have_chosen = false
     let query_key = selected_subtype_index == 0 ? 'cn' : 'ln'
     // 向后端发送建议请求
-    axios.get(`http://192.168.30.33:8000/${selected_type.value}/suggest/?q=${input_text.value}`, { "data": nv }).then(function (res) {
+    axios.get(`http://192.168.30.139:8000/${selected_type.value}/suggest/?q=${input_text.value}`, { "data": nv }).then(function (res) {
         suggest_list.value = res.data.suggest
     })
   })
@@ -172,7 +172,7 @@
   
   // 搜索相关
   function search() {
-    axios.get(`http://192.168.30.33:8000/${selected_type.value}/search/?text=${input_text.value}`).then(function (res) {
+    axios.get(`http://192.168.30.139:8000/${selected_type.value}/search/?text=${input_text.value}`).then(function (res) {
         console.log(res.data)
         store.response = res.data
         store.active = isActive.value

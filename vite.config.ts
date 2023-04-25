@@ -11,7 +11,7 @@ export default defineConfig({
     // host:'60.191.54.203',
     proxy: {
       '/api': {
-        target: 'http://192.168.30.33:8000/',
+        target: 'http://192.168.30.39:8000/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '') // 不可以省略rewrite
       }

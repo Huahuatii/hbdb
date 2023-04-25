@@ -202,7 +202,7 @@ const data2:any = reactive({
     userList: []
 })
 
-const activeName = ref('herb')
+let activeName = ref('herb')
 
 
 
@@ -212,16 +212,26 @@ var pk = url.split('/')[6]
 const handleClick = (tab: any, event: any) => {
     var target_type = String(tab.props.name)
     get_related_data(data2, source_type = source_type, pk = pk, target_type = target_type).then(res => {
-        console.log('用户数据', res);
+        // console.log('用户数据', res);
             data.userList = res
         data.total = Object.keys(res).length
     })
-
+    activeName = ref('123')
 }
 onMounted(() => {
-    // 判断url中是否有prescription，有则执行
-    if (source_type == 'prescription' || source_type == 'compound'  || source_type == 'target' || source_type == 'disease') {
+    // 判断url中是否有prescription，有则执行，
+    if (source_type == 'prescription' || source_type == 'compound'  || source_type == 'target') {
         handleClick({ props: { name: 'herb' } }, null)
+        activeName = ref('herb')
+    }
+    else if (source_type == 'disease') {
+        activeName = ref('prescription')
+
+        handleClick({ props: { name: 'prescription' } }, null)
+    }
+    else if (source_type == 'herb') {
+        handleClick({ props: { name: 'compound' } }, null)
+        activeName = ref('compound')
     }
 })
 

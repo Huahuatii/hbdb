@@ -34,12 +34,12 @@
       <el-descriptions-item>
 
         <template #label>
-            prescription_id
+          prescription_id
         </template>
         {{ data1.dataList.prescription_id }}
       </el-descriptions-item>
 
-      
+
       <el-descriptions-item>
         <template #label>
           <div class="cell-item">
@@ -108,19 +108,29 @@
   </div>
 
   <!-- 关系图谱 -->
+  <div style="width:1380px;margin:0 auto;">
+    <h1 class="myh1">
+      The most relevant compounds and targets
+    </h1>
+    <el-divider border-style="double" class="mydivider" />
+
+  </div>
+
   <div style="width:1380px;margin:0 auto;  display: flex;
   justify-content: space-between;">
-    <div class="echart-div" style="width: 600px; margin: 25px;min-height: 500px;  display: inline-block;">
-      <echarts2_detail />
-    </div>
-    <div class="echart-div" style="width: 600px; margin: 25px;min-height: 500px;  display: inline-block;">
+
+
+    <div class="echart-div" style="width: 600px; margin: 25px;height: 350px;  display: inline-block;">
       <echarts1 />
+    </div>
+    <div class="echart-div" style="width: 600px; margin: 25px;height: 350px;  display: inline-block;">
+      <echarts2 />
     </div>
   </div>
 
 
   <!-- 桑基图 -->
-  <target_cls/>
+  <target_cls />
 
 
   <!-- 相关数据 -->
@@ -130,19 +140,19 @@
 
 
 <script lang="ts" setup>
-import { computed, ref, reactive,onMounted } from 'vue'
+import { computed, ref, reactive, onMounted } from 'vue'
 import { ArrowRight } from '@element-plus/icons-vue'
 import { get_CPM_data } from '../../utils/request.js'
 import echarts2_detail from '../home/echarts2_detail.vue';
 import Related_Data from '../../../src/components/many_table.vue'
 import target_cls from '/home/hht/Myapps/Vue_demo/Vue_vite_demo2/hbdb/src/views/home/echarts_sankey_cpm.vue'
 import echarts1 from '../home/echarts1.vue';
-
+import echarts2 from '../home/echarts2.vue';
 
 const data = reactive({
   dataList: []
 })
-const data1:any = reactive({
+const data1: any = reactive({
   dataList: [] as any[]
 })
 
@@ -157,7 +167,7 @@ get_CPM_data(data, getqyinfo).then(res => {
 
 const size = ref('')
 const iconStyle = computed(() => {
-  const marginMap:any = {
+  const marginMap: any = {
     large: '8px',
     default: '6px',
     small: '4px',
@@ -167,7 +177,7 @@ const iconStyle = computed(() => {
   }
 })
 const blockMargin = computed(() => {
-  const marginMap:any = {
+  const marginMap: any = {
     large: '32px',
     default: '28px',
     small: '24px',
@@ -209,7 +219,7 @@ onMounted(() => {
 :deep(.el-descriptions__label) {
   width: 25%;
 }
+
 :deep(.el-descriptions__title) {
-  margin-left:10px ;
-}
-</style>
+  margin-left: 10px;
+}</style>

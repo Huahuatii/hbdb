@@ -10,10 +10,10 @@
     </el-breadcrumb>
 
     <!-- 语言切换开关 -->
-    <div style="float: right;margin: 25px 20px 20px 20px;">
+    <!-- <div style="float: right;margin: 25px 20px 20px 20px;">
       <el-switch v-model="value5" class="ml-2" inline-prompt size='large'
         style="--el-switch-on-color: #b9af54; --el-switch-off-color: #548cb9" active-text="ZH-CN" inactive-text="EN" />
-    </div>
+    </div> -->
 
     <!-- 分割线 -->
     <div style="padding: 45px 10px 0px 10px; "> <el-divider border-style="double" class="mydivider" /> </div>

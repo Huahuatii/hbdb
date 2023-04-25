@@ -34,7 +34,7 @@ provide(THEME_KEY, 'light');
 
 const option = ref({
   title: {
-    text: 'Compounds with High Proportions(top30)',
+    text: 'Targets with High Proportions(top30)',
     // subtext: 'no subtext',
     left: 'center'
   },
@@ -88,7 +88,7 @@ const handleClick = async (type: string) => {
   }
 }
 onMounted(() => {
-  handleClick('compound');
+  handleClick('target');
 });
 </script>
 

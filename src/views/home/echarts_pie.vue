@@ -66,7 +66,7 @@
   
   onMounted(async () => {
     try {
-      const response = await axios.get('http://192.168.30.33:8000/disease/D003/herb/');
+      const response = await axios.get('http://192.168.30.139:8000/disease/D003/herb/');
       const data = response.data.frequency;
       const legendData = data.map((item: any) => item.name);
       const seriesData = data.map((item: any) => ({ value: item.value, name: item.name }));

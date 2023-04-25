@@ -94,24 +94,34 @@
         </template>
         {{ data1.dataList.smiles }}
       </el-descriptions-item>
+      <el-descriptions-item>
+        <template #label>
+          <div class="cell-item">
+
+            Molecular structure formula
+          </div>
+        </template>
+        <img :src="'http://192.168.30.139:9000/ingredients/ingredient_image/' + data1.dataList.compound_id + '.png'" alt="Compound Image"
+        style="width: 190px; height: 190px;margin-left: 100px;" />
+      </el-descriptions-item>
     </el-descriptions>
   </div>
 
   <!-- 关系图谱 -->
-  <div style="width:1380px;margin:0 auto;  display: flex; justify-content: space-between;">
+  <!-- <div style="width:1380px;margin:0 auto;  display: flex; justify-content: space-between;">
     <div class="echart-div" style="width: 590px; margin: 25px;height: 500px;  display: inline-block;">
       <echarts2_detail />
     </div>
-    <div class="echart-div" style="width: 590px; margin: 25px;height: 500px;  display: inline-block;">
+    <div class="echart-div" style="width: 590px; margin: 25px;height: 500px;  display: inline-block;"> -->
       <!-- 根据target_ID插入一张图片 -->
-      <img :src="'http://192.168.30.33:9000/ingredients/ingredient_image/' + data1.dataList.compound_id + '.png'" alt="Compound Image"
+      <!-- <img :src="'http://192.168.30.139:9000/ingredients/ingredient_image/' + data1.dataList.compound_id + '.png'" alt="Compound Image"
         style="width: 590px; height: 500px;" />
     </div>
-  </div>
+  </div> -->
 
 
   <!-- 桑基图 -->
-  <echarts_sankey />
+  <!-- <echarts_sankey /> -->
 
   <!-- 相关数据 -->
   <Related_Data />

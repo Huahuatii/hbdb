@@ -10,7 +10,7 @@ let loadingObj: any = ref()
 
 const Service = axios.create({
     timeout: 80000,
-    baseURL: "http://192.168.30.33:8000",
+    baseURL: "http://192.168.30.139:8000",
     headers: {
         "Content-type": "application/json;charset=utf-8"
     }

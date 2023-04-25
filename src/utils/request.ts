@@ -44,35 +44,35 @@ export const get_T_data = (data:any, pk = '') => {
 // 获取细节页面数据
 export const get_CPM_data_details = (data: any) => {
     return get({
-        url: 'http://127.0.0.1:8000/details/CPM/:id',
+        url: 'http://192.168.30.139:8000/details/CPM/:id',
         data
     })
 }
 
 export const get_MD_data_details = (data: any) => {
     return get({
-        url: 'http://127.0.0.1:8000/details/MD/:id',
+        url: 'http://192.168.30.139:8000/details/MD/:id',
         data
     })
 }
 
 export const get_MM_data_details = (data: any, pk: any) => {
     return get({
-        url: `http://127.0.0.1:8000/HERB_detail/${pk}`,
+        url: `http://192.168.30.139:8000/HERB_detail/${pk}`,
         data
     })
 }
 
 export const get_T_data_details = (data: any, pk: any) => {
     return get({
-        url: `http://127.0.0.1:8000/TARGET_detail/${pk}`,
+        url: `http://192.168.30.139:8000/TARGET_detail/${pk}`,
         data
     })
 }
 
 export const get_CC_data_details = (data: any, pk: any) => {
     return get({
-        url: `http://127.0.0.1:8000/INGREDIENT_detail/${pk}`,
+        url: `http://192.168.30.139:8000/INGREDIENT_detail/${pk}`,
         data
     })
 }

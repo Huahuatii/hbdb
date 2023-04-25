@@ -8,23 +8,34 @@
 
 
             <div
-                style="width: 500px;margin-left: 25px;border-top:2px solid #9a8158;border-bottom:2px solid #9a8158;border-left:2px solid #9a8158;padding: 10px;">
-                <el-select v-model="option2.value" filterable placeholder="Choose a Target Type: eg:GPCR secretin"
-                    style="margin-top: 30px;width: 450px;">
-                    <el-option v-for="c in classes" :key="c.name" :label="c.name" :value="c.name"
-                        @click="handleClick(c.name)" />
-                </el-select>
-                <v-chart :option="option2" style="height: 650px; width: 450px;margin-top: 30px;" />
-
+                style="width: 1300px;margin-left: 25px; padding: 10px;">
+                <!-- <div
+                style="width: 1200px;margin-left: 25px;border-top:2px solid #9a8158;border-bottom:2px solid #9a8158;border-left:2px solid #9a8158;padding: 10px;"> -->
+                <div class="sankey_head">
+                    <h1 class="myh1">
+                        Sankey Chart Relationship
+                    </h1>
+                    <!-- 竖直居中 -->
+                    <el-select v-model="option2.value" class='select_type' filterable placeholder="Choose a Target Type: eg:GPCR secretin" style="margin-left: 45px;width: 450px;">
+                        <el-option v-for="c in classes" :key="c.name" :label="c.name" :value="c.name"
+                            @click="handleClick(c.name)" />
+                    </el-select>
+                    
+                </div>
+                <el-divider border-style="double" class="mydivider" style="margin-top: 0;"/>
+                <!-- <v-chart :option="option2" style="height: 650px; width: 450px;margin-top: 30px;" /> -->
+                <div class="echart-div"
+                    style="width: 1190px; margin: 45px 45px 45px 45px;max-height: 1000px; overflow-y:scroll ;">
+                    <!-- 最小高度为400px -->
+                    <v-chart class="chart" :option="option" autoresize :style="{ height: edgeNum +'px', minHeight: '400px' }" />
+                </div>
             </div>
 
 
 
 
             <!-- 桑基图 -->
-            <div class="echart-div" style="width: 6980px; margin: 25px;height: 700px; overflow-y:scroll ;">
-                <v-chart class="chart" :option="option" autoresize style="min-height: 1500px;" />
-            </div>
+
         </div>
     </div>
 </template>
@@ -39,9 +50,24 @@ import 'echarts-wordcloud';
 
 const pk = String(window.location.href.split('/')[6]);
 const source_type = String(window.location.href.split('/')[4]);
+
+// 访问http://192.168.30.139:8000/${source_type}/${pk}/graphic/获取边的数目设定echart-div的高度的方法
+let edgeNum = 0;
+
+axios.post(`http://192.168.30.139:8000/${source_type}/${pk}/graphic/`, {
+    "bio_class": 'Protein'
+}).then((response) => {
+    // 获取response.data.mulberryData.links数据条目数
+    edgeNum = response.data.mulberryData.links.length * 10 + 100;
+    console.log('edgeNum', edgeNum);
+});
+console.log('edgeNum', edgeNum);
+
+
+
 const classes = ref([] as any[]);
 const getClasses = async () => {
-    const response = await axios.get(`http://192.168.30.33:8000/${source_type}/${pk}/graphic/`);
+    const response = await axios.get(`http://192.168.30.139:8000/${source_type}/${pk}/graphic/`);
 
     const classList = response.data.bio_class_list.map((className: any) => ({
         name: className,
@@ -154,10 +180,11 @@ const option = ref({
     ]
 });
 
+
 const handleClick = async (c: any) => {
     try {
-        console.log('123',c);
-        const response = await axios.post(`http://192.168.30.33:8000/${source_type}/${pk}/graphic/`, {
+        console.log('123', c);
+        const response = await axios.post(`http://192.168.30.139:8000/${source_type}/${pk}/graphic/`, {
             "bio_class": c
         });
         const node = response.data.mulberryData.data;
@@ -165,7 +192,7 @@ const handleClick = async (c: any) => {
         // option.value.legend.data = legendData;
         option.value.series[0].data = node;
         option.value.series[0].links = link;
-        
+
     } catch (error) {
         console.log(error);
     }
@@ -185,7 +212,7 @@ let wordCloudColor = [
 ];
 
 const option2 = ref({
-    value:[],
+    value: [],
     series: [
         {
             type: 'wordCloud',
@@ -218,10 +245,24 @@ const option2 = ref({
 </script>
   
 <style scoped>
+.chart{
+    min-height: 400px;
+}
 .scrollbar-flex-content {
     display: flex;
 }
-
+.sankey_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.select_type{
+/* 竖直居中 */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
 .scrollbar-demo-item {
     flex-shrink: 0;
     display: flex;
