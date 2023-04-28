@@ -14,8 +14,8 @@
         background: 'rgba(235, 209, 158, 0.693)', color: 'rgb(86 48 9)', fontSize: '22px'
       }">
       <el-table-column label="target_id" prop="target_id" sortable />
-      <el-table-column label="protein_name" prop="protein_name" sortable />
-      <el-table-column label="symbol" prop="symbol" sortable />
+      <el-table-column label="protein_name" prop="protein_name" sortable style="width: 400px;"/>
+      <el-table-column label="symbol" prop="gene_symbol" sortable />
       <el-table-column label="uniprot" prop="uniprot" sortable />
       <el-table-column align="right">
 
@@ -96,6 +96,15 @@ console.log(index);
 </script>
 
 <style scoped>
+.bc1 {
+  background-color: rgb(245, 242, 236);
+  width: 1350px;
+  min-height: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 0.9ch;
+  padding: 5px 15px;
+}
 .mypagination {
   margin: 15px 5px;
 }

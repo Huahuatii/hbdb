@@ -233,6 +233,10 @@ onMounted(() => {
         handleClick({ props: { name: 'compound' } }, null)
         activeName = ref('compound')
     }
+    setTimeout(() => {
+        handleClick({ props: { name: 'herb' } }, null);
+        console.log('activeName', activeName);
+    }, 1000);
 })
 
 

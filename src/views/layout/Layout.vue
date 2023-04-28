@@ -8,9 +8,7 @@
         <div style="width: 12%;"></div>
         <div class="navbar-item" v-for="page in pages" :key="page.name" style="font-size: 28px;">
           <router-link :to="page.link" @mouseover="startAnimation(page.name)" @mouseleave="stopAnimation(page.name)"
-            class="nav-item">{{
-              page.name
-            }}</router-link>
+            class="nav-item" :class="{ active: isActive === page.idd }" @click="changeType(page.idd)">{{ page.name }}</router-link>
         </div>
       </div>
     </div>
@@ -31,9 +29,11 @@
         <li style="width:50px ;"></li>
         <div>
           <li><a href="#" style="font-size: 12px;">浙ICP案2022028846号</a></li>
-          <li><div style="min-height: 5px;"></div></li>
+          <li>
+            <div style="min-height: 5px;"></div>
+          </li>
           <li><a href="#" style="font-size: 12px;">© 2022 keyanbu. All rights reserved.
-</a></li>
+            </a></li>
         </div>
       </ul>
       <div style="width:16%"></div>
@@ -48,29 +48,30 @@
 
 <script lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
-import { reactive } from 'vue';
+import { reactive,ref } from 'vue';
 export default {
   setup() {
     const pages = [
-      { name: 'Home', link: '/home' },
-      { name: 'Search', link: '/about' },
-      { name: 'Browser', link: '/search' },
-      // { name: 'About', link: '/details' },
-      { name: 'Help', link: '/help' },
-      { name: 'Download', link: '/download' },
-      { name: 'Contact', link: '/contact' },
+      { name: 'Home', link: '/home', idd: 1 },
+      { name: 'Search', link: '/about', idd: 2 },
+      { name: 'Browser', link: '/search', idd: 3 },
+      { name: 'Help', link: '/help', idd: 4 },
+      { name: 'Download', link: '/download', idd: 5 },
+      { name: 'Contact', link: '/contact', idd: 6 },
     ];
-
+    let isActive = ref(0);
     const state = reactive({
       bgColor: '#b19870',
       activePage: null,
     });
-
-    function startAnimation(name:any) {
+    function changeType(i: number) {
+    isActive.value = i;
+  }
+    function startAnimation(name: any) {
       state.activePage = name;
     }
 
-    function stopAnimation(name:any) {
+    function stopAnimation(name: any) {
       state.activePage = null;
     }
 
@@ -80,6 +81,8 @@ export default {
       startAnimation,
       stopAnimation,
       activePage: state.activePage,
+      isActive,
+      changeType,
     };
   },
 };
@@ -177,6 +180,7 @@ export default {
   color: #fff7cf;
   animation: shake 0.5s;
   animation-fill-mode: forwards;
+  
 }
 
 footer {
@@ -196,7 +200,12 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-
+.nav-item.active{
+  color: #fff7cf;
+  /* 添加下划线 */
+  /* border-bottom: 1px solid #fff7cf; */
+  transform: scaleX(1);
+}
 .nav-menu {
   list-style: none;
   margin: 0;

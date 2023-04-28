@@ -98,6 +98,15 @@ console.log(index);
 </script>
 
 <style scoped>
+.bc1 {
+  background-color: rgb(245, 242, 236);
+  width: 1350px;
+  min-height: 100px;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 0.9ch;
+  padding: 5px 15px;
+}
 .mypagination {
   margin: 15px 5px;
 }

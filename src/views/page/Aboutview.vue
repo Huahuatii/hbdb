@@ -3,9 +3,22 @@
     <div class="container" style="min-height: 783px;">
       <big_search />
     </div>
-    <div class="bc1" style="width: 1010px; margin: 0 auto; margin-top:-362px ;">
 
-<h3 style="margin-left: 30px;">How to Search</h3>
+    <div class="bc1" style="width: 1010px; margin: 0 auto; margin-top:-362px ;">
+      <el-card style="margin:35px; background-color:#f1f0e7">
+  <h3 style="margin-left: 30px;">How to Search</h3>
+<el-divider border-style="double" class="mydivider" />
+<div style="margin:25px 25px;">
+  <p>For different data types, you can use different categories of keywords to conduct searches. Here is a brief introduction on how to perform searches:</p>
+<li>Diseases:</li>
+<li>Prescriptions:</li>
+<li>Herbs:</li>
+<li>Compounds:</li>
+<li>Targets:</li>
+</div>
+</el-card>
+
+<h3 style="margin-left: 30px;margin-top: 30px;">Search Result</h3>
 <el-divider border-style="double" class="mydivider" />
 <info_card/>
 </div>

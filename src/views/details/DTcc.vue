@@ -4,7 +4,7 @@
     <el-breadcrumb :separator-icon="ArrowRight" style="padding: 30px 15px;float: left;">
       <el-breadcrumb-item :to="{ path: '/' }" style="font-size: 24px;">Homepage</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/search' }" style="font-size: 24px;">Data Type</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/search/cc' }" style="font-size: 24px;">Chemical Components</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/search/cc' }" style="font-size: 24px;">Componuds</el-breadcrumb-item>
       <el-breadcrumb-item style="font-size: 24px;">{{ data1.dataList.pref_name }}</el-breadcrumb-item>
 
     </el-breadcrumb>

@@ -11,13 +11,13 @@
   <!-- 内容 -->
   <div class='mycontent' style="margin-top: 66px;">
     <h1 class="myh1">
-      Overview of DBHIT
+      Summary Diagram
     </h1>
     <el-divider border-style="double" class="mydivider" />
     <img src="../../assets/fg2.png" alt="信息" class="hp_fg">
 
     <h1 class="myh1">
-      Overview of DBHIT
+      Data Overview
     </h1>
     <el-divider border-style="double" class="mydivider" />
   </div>

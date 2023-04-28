@@ -4,8 +4,8 @@
     <el-breadcrumb :separator-icon="ArrowRight" style="padding: 30px 15px;float: left;">
       <el-breadcrumb-item :to="{ path: '/' }" style="font-size: 24px;">Homepage</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/search' }" style="font-size: 24px;">Data Type</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/search/mm' }" style="font-size: 24px;">Medicinal Materials</el-breadcrumb-item>
-      <el-breadcrumb-item style="font-size: 24px;">{{ data.dataList.name }}</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/search/mm' }" style="font-size: 24px;">Herbs</el-breadcrumb-item>
+      <el-breadcrumb-item style="font-size: 24px;">{{ data1.dataList.chinese_pin_yin }}</el-breadcrumb-item>
 
     </el-breadcrumb>
 
@@ -21,7 +21,7 @@
 
   <!-- 数据内容 -->
   <div class="mycontent2">
-    <el-descriptions class="margin-top" :title="data.dataList.name" :column="3" :size="size" border>
+    <el-descriptions class="margin-top" :title="data1.dataList.chinese_pin_yin" :column="3" :size="size" border>
       <template #extra>
         <el-radio-group v-model="size">
           <el-radio label="large">Large</el-radio>
@@ -92,18 +92,18 @@
   <!-- 关系图谱 -->
   <div style="width:1380px;margin:0 auto;  display: flex;
   justify-content: space-between;">
-    <div class="echart-div" style="width: 600px; margin: 25px;height: 500px;  display: inline-block;">
+    <!-- <div class="echart-div" style="width: 600px; margin: 25px;height: 500px;  display: inline-block;">
       <echarts2_detail />
-    </div>
-    <div class="echart-div" style="width: 600px; margin: 25px;height: 500px;  display: inline-block;">
+    </div> -->
+    <!-- <div class="echart-div" style="width: 600px; margin: 25px;height: 500px;  display: inline-block;">
       <echarts1 />
-    </div>
+    </div> -->
   </div>
 
 
   <!-- 桑基图 -->
   <!-- <target_class /> -->
-  <echarts_sankey />
+  <!-- <echarts_sankey /> -->
 
   <!-- 相关数据 -->
   <Related_Data />

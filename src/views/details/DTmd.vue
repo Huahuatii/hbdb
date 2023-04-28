@@ -4,7 +4,7 @@
     <el-breadcrumb :separator-icon="ArrowRight" style="padding: 30px 15px;float: left;">
       <el-breadcrumb-item :to="{ path: '/' }" style="font-size: 24px;">Homepage</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/search' }" style="font-size: 24px;">Data Type</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/search/cc' }" style="font-size: 24px;">Chemical Components</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/search/cc' }" style="font-size: 24px;">Disease</el-breadcrumb-item>
       <el-breadcrumb-item style="font-size: 24px;">{{ data1.dataList.disease_id }}</el-breadcrumb-item>
 
     </el-breadcrumb>
@@ -71,11 +71,13 @@
   <!-- 关系图谱 -->
   <div style="width:1380px;margin:0 auto;  display: flex;
   justify-content: space-between;">
-    <div class="echart-div" style="width: 600px; margin: 25px;min-height: 500px;  display: inline-block;">
-      <echarts2_detail />
-    </div>
-    <div class="echart-div" style="width: 600px; margin: 25px;min-height: 500px;  display: inline-block;">
+        <div class="echart-div" style="width: 600px; margin: 25px;height: 350px;  display: inline-block;">
+
       <echarts1 />
+    </div>
+    <div class="echart-div" style="width: 600px; margin: 25px;height: 350px;  display: inline-block;">
+
+      <echarts2 />
     </div>
   </div>
 
@@ -97,6 +99,7 @@ import echarts2_detail from '../home/echarts2_detail.vue';
 import Related_Data from '../../../src/components/many_table.vue'
 import target_cls from '/home/hht/Myapps/Vue_demo/Vue_vite_demo2/hbdb/src/views/home/echarts_sankey_cpm.vue'
 import echarts1 from '../home/echarts1.vue';
+import echarts2 from '../home/echarts2.vue';
 
 // 获取数据
 'data1是用来获取基本详细信息的'

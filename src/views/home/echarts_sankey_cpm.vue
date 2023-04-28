@@ -7,8 +7,7 @@
         <div style="display: flex;">
 
 
-            <div
-                style="width: 1300px;margin-left: 25px; padding: 10px;">
+            <div style="width: 1300px;margin-left: 25px; padding: 10px;">
                 <!-- <div
                 style="width: 1200px;margin-left: 25px;border-top:2px solid #9a8158;border-bottom:2px solid #9a8158;border-left:2px solid #9a8158;padding: 10px;"> -->
                 <div class="sankey_head">
@@ -16,18 +15,20 @@
                         Sankey Chart Relationship
                     </h1>
                     <!-- 竖直居中 -->
-                    <el-select v-model="option2.value" class='select_type' filterable placeholder="Choose a Target Type: eg:GPCR secretin" style="margin-left: 45px;width: 450px;">
+                    <el-select v-model="option2.value" class='select_type' filterable
+                        placeholder="Choose a Target Type: eg:GPCR secretin" style="margin-left: 45px;width: 450px;">
                         <el-option v-for="c in classes" :key="c.name" :label="c.name" :value="c.name"
                             @click="handleClick(c.name)" />
                     </el-select>
-                    
+
                 </div>
-                <el-divider border-style="double" class="mydivider" style="margin-top: 0;"/>
+                <el-divider border-style="double" class="mydivider" style="margin-top: 0;" />
                 <!-- <v-chart :option="option2" style="height: 650px; width: 450px;margin-top: 30px;" /> -->
                 <div class="echart-div"
-                    style="width: 1190px; margin: 45px 45px 45px 45px;max-height: 1000px; overflow-y:scroll ;">
+                    style="width: 1190px; margin: 45px 45px 45px 45px;min-height: 500px;max-height: 1000px; overflow-y:scroll ;">
                     <!-- 最小高度为400px -->
-                    <v-chart class="chart" :option="option" autoresize :style="{ height: edgeNum +'px', minHeight: '400px' }" />
+                    <v-chart class="chart" :option="option" autoresize
+                        :style="{ height: edgeNum + 'px', minHeight: '500px' }" />
                 </div>
             </div>
 
@@ -52,16 +53,15 @@ const pk = String(window.location.href.split('/')[6]);
 const source_type = String(window.location.href.split('/')[4]);
 
 // 访问http://192.168.30.139:8000/${source_type}/${pk}/graphic/获取边的数目设定echart-div的高度的方法
+// 构造一个函数
 let edgeNum = 0;
-
 axios.post(`http://192.168.30.139:8000/${source_type}/${pk}/graphic/`, {
     "bio_class": 'Protein'
 }).then((response) => {
     // 获取response.data.mulberryData.links数据条目数
     edgeNum = response.data.mulberryData.links.length * 10 + 100;
-    console.log('edgeNum', edgeNum);
 });
-console.log('edgeNum', edgeNum);
+
 
 
 
@@ -78,8 +78,11 @@ const getClasses = async () => {
     option2.value.series[0].data = classList;
 };
 onMounted(() => {
-    getClasses();
-    handleClick('Protein');
+
+    setTimeout(() => {
+        getClasses();
+        handleClick('Protein');
+    }, 1000);
 });
 
 const option = ref({
@@ -88,6 +91,7 @@ const option = ref({
         subtext: 'no subtext',
         left: 'center'
     },
+
     tooltip: {
         trigger: 'item',
         formatter: '<br/>{b} ',
@@ -95,7 +99,7 @@ const option = ref({
     },
     legend: {
         left: 'center',
-        top: 'bottom',
+        top: 500 // 距离顶部 90px
     },
     toolbox: {
         show: true,
@@ -245,24 +249,28 @@ const option2 = ref({
 </script>
   
 <style scoped>
-.chart{
+.chart {
     min-height: 400px;
 }
+
 .scrollbar-flex-content {
     display: flex;
 }
-.sankey_head{
+
+.sankey_head {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.select_type{
-/* 竖直居中 */
+
+.select_type {
+    /* 竖直居中 */
     /* display: flex; */
     align-items: center;
     justify-content: center;
     width: 200px;
 }
+
 .scrollbar-demo-item {
     flex-shrink: 0;
     display: flex;
@@ -275,4 +283,5 @@ const option2 = ref({
     border-radius: 4px;
     background: var(--el-color-danger-light-9);
     color: var(--el-color-danger);
-}</style>
+}
+</style>

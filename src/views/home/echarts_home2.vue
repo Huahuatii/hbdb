@@ -27,7 +27,7 @@
   
   const option = ref({
     title: {
-      text: 'Prescription vs Hospital Prescription',
+      text: 'Proportion of Hospital Prescriptions',
       textStyle: {
         fontSize: 30,
         // fontWeight: 'bold',
@@ -45,8 +45,8 @@
       left: 'center',
       top: 'bottom',
       data: [
-        { value: 3872, name: 'Prescription' },
-        { value: 1340, name: 'Hospital Prescription' },
+        { value: 3872, name: 'Prescriptions' },
+        { value: 1340, name: 'Hospital Prescriptions' },
 
       ] // 动态生成
     },
@@ -60,7 +60,7 @@
       }
     },
     // 设置两个渐变色
-    color:['#68cf3e','#ff9f7f'],
+    color:['#e0a291','#c3b89f'],
     series: [
       {
         name: 'Data type',
@@ -76,8 +76,8 @@
         },
         
         data: [
-            { value: 3872, name: 'Prescription' },
-            { value: 1340, name: 'Hospital Prescription' },
+            { value: 3872, name: 'Prescriptions' },
+            { value: 1340, name: 'Hospital Prescriptions' },
 
         ] // 动态生成
       }

@@ -45,11 +45,11 @@
       left: 'center',
       top: 'bottom',
       data: [
-        { value: 5212, name: 'Prescription' },
-        { value: 2751, name: 'Herb' },
-        { value: 576, name: 'Compound' },
-        { value: 1284, name: 'Target' },
-        { value: 2218, name: 'Disease' },
+        { value: 5212, name: 'Prescriptions' },
+        { value: 2751, name: 'Herbs' },
+        { value: 576, name: 'Compounds' },
+        { value: 1284, name: 'Targets' },
+        { value: 2218, name: 'Diseases' },
       ] // 动态生成
     },
     toolbox: {
@@ -72,11 +72,11 @@
           borderRadius: 7
         },
         data: [
-            { value: 5212, name: 'Prescription' },
-            { value: 2751, name: 'Herb' },
-            { value: 576, name: 'Compound' },
-            { value: 1284, name: 'Target' },
-            { value: 2218, name: 'Disease' },
+            { value: 5212, name: 'Prescriptions' },
+            { value: 2751, name: 'Herbs' },
+            { value: 576, name: 'Compounds' },
+            { value: 1284, name: 'Targets' },
+            { value: 2218, name: 'Diseases' },
         ] // 动态生成
       }
     ],
