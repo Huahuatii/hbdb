@@ -13,7 +13,7 @@
         background: 'rgba(235, 209, 158, 0.693)', color: 'rgb(86 48 9)', fontSize: '22px'
       }">
       <el-table-column label="prescription_id" prop="prescription_id" sortable />
-      <el-table-column label="tcm_prescription_id" prop="tcm_prescription_id" sortable />
+      <el-table-column label="tcm_prescription_id" prop="tcm_prescription_id" sortable/>
       <el-table-column label="chinese_name" prop="chinese_name" sortable />
       <el-table-column label="source" prop="source" sortable />
       <el-table-column align="right">
@@ -23,14 +23,14 @@
         </template>
 
         <template #default="scope">
-          <el-button size="large" @click="go_details(scope.$index, scope.row)">Details</el-button>
+          <el-button size="large" @click="go_details(scope.$index, scope.row)" class="dets">Details</el-button>
         </template>
       </el-table-column>
     </el-table>
 
     <div class="mypagination">
       <el-pagination v-model:currentPage="data.searchParams.pagenum" v-model:page-size="data.searchParams.pagesize"
-        :page-sizes="[5, 10, 25, 50]" background='true' layout="total, sizes, prev, pager, next, jumper"
+        :page-sizes="[5, 10, 15, 25, 50]" background='true' layout="total, sizes, prev, pager, next, jumper"
         :total="data.total" @size-change="searchCPM" @current-change="searchCPM" />
     </div>
   </div>
@@ -63,7 +63,7 @@ const data:any = reactive({
   keyWord: "",
   searchParams: {
     query: "",
-    pagesize: ref(10),
+    pagesize: ref(15),
     pagenum: ref(1)
   },
   total: 0,
@@ -111,20 +111,37 @@ console.log(index);
   margin: 15px 5px;
 }
 
-:deep(.el-pagination.is-background .el-pager li:not(.disabled)) {
+:deep(.el-pagination.is-background .el-pager li) {
   background-color: rgb(241, 208, 141);
   /* // 进行修改未选中背景和字体 */
   color: #ffffff;
 }
 
-:deep(.el-pagination.is-background .el-pager li:not(.disabled).active) {
+:deep(.el-pagination.is-background .el-pager li.is-active) {
   background-color: rgba(235, 209, 158, 0.693);
-  color: #d32323;
+  color: #76520f;
 }
 
 
-:deep(.el-tabs__item) {
+/* :deep(.el-tabs__item) {
   font-size: 24px !important;
   font-weight: 700;
+} */
+:deep(.cell) {
+  font-size: 20px;
+}
+
+/* el-table__cell 的子代cell */
+:deep(th>.cell) {
+  font-size: 22px ;
+  height: 35px;
+  line-height: 35px;
+}
+:deep(.el-table_1_column_2) {
+  width: 300px ;
+}
+:deep(li>.is-active) {
+  background-color: rgb(241, 208, 141);
+  color: #b60b0b;
 }
 </style>

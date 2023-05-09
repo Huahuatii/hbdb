@@ -5,7 +5,8 @@
     <div class="navbar" :style="{ backgroundColor: bgColor }">
       <div class="mynav">
         <img src="../../assets/logo4.png" alt="logo" style="height:60px;margin-left:50px;">
-        <div style="width: 12%;"></div>
+        <img src="../../assets/logo_DPHIT.png" alt="DPHIT" style="height:40px;margin-left:-100px;">
+        <div style="width: 8%;"></div>
         <div class="navbar-item" v-for="page in pages" :key="page.name" style="font-size: 28px;">
           <router-link :to="page.link" @mouseover="startAnimation(page.name)" @mouseleave="stopAnimation(page.name)"
             class="nav-item" :class="{ active: isActive === page.idd }" @click="changeType(page.idd)">{{ page.name }}</router-link>
@@ -96,7 +97,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1350px;
+  width: 1650px;
   margin: 0 auto;
 }
 

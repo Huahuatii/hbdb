@@ -5,26 +5,56 @@
     </div>
 
     <div class="bc1" style="width: 1010px; margin: 0 auto; margin-top:-362px ;">
-      <el-card style="margin:35px; background-color:#f1f0e7">
-  <h3 style="margin-left: 30px;">How to Search</h3>
-<el-divider border-style="double" class="mydivider" />
-<div style="margin:25px 25px;">
-  <p>For different data types, you can use different categories of keywords to conduct searches. Here is a brief introduction on how to perform searches:</p>
-<li>Diseases:</li>
-<li>Prescriptions:</li>
-<li>Herbs:</li>
-<li>Compounds:</li>
-<li>Targets:</li>
-</div>
-</el-card>
+      <!-- <el-card style="margin:35px; background-color:#f1f0e7">
+        <h3 style="margin-left: 30px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+            style="height: 24px; color: #7f7e7c;"> -->
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <!-- <path fill="#303133"
+              d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+          </svg> How to Search</h3>
+        <el-divider border-style="double" class="mydivider" />
 
-<h3 style="margin-left: 30px;margin-top: 30px;">Search Result</h3>
-<el-divider border-style="double" class="mydivider" />
-<info_card/>
-</div>
+        <div style="margin:25px 25px;">
+          <p>For different data types, you can use different categories of keywords to conduct searches. Here is a brief
+            introduction on how to perform searches:</p>
+          <li>Diseases:</li>
+          <li>Prescriptions:</li>
+          <li>Herbs:</li>
+          <li>Compounds:</li>
+          <li>Targets:</li>
+        </div>
+      </el-card> -->
+
+      <div class="demo-collapse" style="width: 920px;margin: 0 auto;margin-top: 50px;">
+        <el-collapse v-model="activeNames" @change="handleChange">
+          <el-collapse-item name="1">
+            <template #title>
+              <h3 style="margin-left: 25px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                  style="height: 24px; color: #7f7e7c;"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path fill="#303133"
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+                </svg> How to Search</h3>
+
+            </template>
+            <!-- <el-divider class="mydivider" /> -->
+            <div style="margin-top: 25px;margin-left: 25px;font-size: 18px;font-weight: 550;"> For different data types, you can use different categories of keywords to conduct searches. Here is a brief introduction on how to perform searches:
+              <li>Diseases:</li>
+              <li>Prescriptions:</li>
+              <li>Herbs:</li>
+              <li>Compounds:</li>
+              <li>Targets:</li>
+            </div>
+          </el-collapse-item>
+        </el-collapse>
+      </div>
+
+      <h3 style="margin-left: 30px;margin-top: 30px;">Search Result <span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin-left: 600px;">total results: {{data.total}}</span></h3>
+      <el-divider border-style="double" class="mydivider" />
+      <info_card />
+    </div>
 
 
-    
+
     <!-- <div class="bc1" style="width: 1380px; margin: 0 auto; margin-top: ;">
       <p class="myp1">The data you need is right below:</p>
     <el-divider border-style="double" class="mydivider" />
@@ -117,7 +147,10 @@ const data2: any = reactive({
 
 const activeName = ref('herb')
 
-
+const activeNames = ref(['1'])
+const handleChange = (val: string[]) => {
+  console.log(val)
+}
 
 var url = window.location.href
 var source_type = url.split('/')[4]
@@ -180,6 +213,7 @@ const go_details = (row: number, index: any) => {
   justify-content: center;
 
 }
+
 .bc1 {
   background-color: rgb(245, 242, 236);
   width: 1040px;
@@ -196,6 +230,7 @@ const go_details = (row: number, index: any) => {
   overflow-x: hidden;
 
 }
+
 .mycontent {
   background-color: rgb(245, 242, 236);
   width: 1350px;
@@ -224,5 +259,25 @@ const go_details = (row: number, index: any) => {
 
 :deep(.el-descriptions__title) {
   margin-left: 10px;
+}
+
+:deep(.el-collapse-item__header) {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: larger;
+  background-color: #f1f0e7;
+  border: 1px solid #ebebe0;
+  border-radius: 4px;
+  /* 阴影 */
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+:deep(.el-collapse-item__content) {
+
+  background-color: #f1f0e7;
+  border: 1px solid #ebebe0;
+  border-radius: 4px;
+  /* 阴影 */
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 </style>

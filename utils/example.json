@@ -1,0 +1,122 @@
+[
+    {
+        "color": 16.1853044007,
+        "size": 24,
+        "x": 29.35,
+        "y": "steroid hormone mediated signaling pathway"
+    },
+    {
+        "color": 16.1799710547,
+        "size": 10,
+        "x": 24.46,
+        "y": "one-carbon metabolic process"
+    },
+    {
+        "color": 16.1332092888,
+        "size": 11,
+        "x": 18.35,
+        "y": "bicarbonate transport"
+    },
+    {
+        "color": 16.1332092888,
+        "size": 19,
+        "x": 31.69,
+        "y": "intracellular receptor signaling pathway"
+    },
+    {
+        "color": 16.0137356356,
+        "size": 16,
+        "x": 14.68,
+        "y": "chloride transport"
+    },
+    {
+        "color": 15.4199609289,
+        "size": 16,
+        "x": 13.81,
+        "y": "chloride transmembrane transport"
+    },
+    {
+        "color": 15.4199609289,
+        "size": 13,
+        "x": 11.22,
+        "y": "xenobiotic metabolic process"
+    },
+    {
+        "color": 15.3027308377,
+        "size": 19,
+        "x": 10.56,
+        "y": "calcium ion transmembrane transport"
+    },
+    {
+        "color": 15.1322788564,
+        "size": 12,
+        "x": 40.03,
+        "y": "mitochondrial electron transport, cytochrome c to oxygen"
+    },
+    {
+        "color": 14.9487142914,
+        "size": 24,
+        "x": 4.56,
+        "y": "inflammatory response"
+    },
+    {
+        "color": 14.8681939147,
+        "size": 14,
+        "x": 11.42,
+        "y": "electron transport chain"
+    },
+    {
+        "color": 14.8233684834,
+        "size": 8,
+        "x": 25.52,
+        "y": "ionotropic glutamate receptor signaling pathway"
+    },
+    {
+        "color": 14.6594806283,
+        "size": 13,
+        "x": 8.3,
+        "y": "response to ethanol"
+    },
+    {
+        "color": 14.602968418,
+        "size": 41,
+        "x": 4.48,
+        "y": "ion transport"
+    },
+    {
+        "color": 14.537057213,
+        "size": 5,
+        "x": 52.42,
+        "y": "calcium ion transmembrane import into cytosol"
+    },
+    {
+        "color": 14.3953290532,
+        "size": 17,
+        "x": 10.57,
+        "y": "steroid metabolic process"
+    },
+    {
+        "color": 14.3516539897,
+        "size": 12,
+        "x": 9.27,
+        "y": "hydrogen ion transmembrane transport"
+    },
+    {
+        "color": 14.2586775333,
+        "size": 30,
+        "x": 7.41,
+        "y": "ion transmembrane transport"
+    },
+    {
+        "color": 14.2555671108,
+        "size": 12,
+        "x": 35.22,
+        "y": "gamma-aminobutyric acid signaling pathway"
+    },
+    {
+        "color": 14.228000281,
+        "size": 35,
+        "x": 3.53,
+        "y": "oxidation-reduction process"
+    }
+]

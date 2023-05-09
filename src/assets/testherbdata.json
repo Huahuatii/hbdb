@@ -1,157 +1,47 @@
 {
     "node": [
         {
-            "id": "Herb",
-            "name": "Herb",
-            "category": "Herb",
-            "symbolSize": [
-                20,
-                20
-            ]
+            "color": 16.1853044007,
+            "size": 24,
+            "x": 29.35,
+            "y": "steroid hormone mediated signaling pathway"
         },
         {
-            "id": "Compound",
-            "name": "Compound",
-            "category": "Compound",
-            "symbolSize": [
-                20,
-                20
-            ]
+            "color": 16.1799710547,
+            "size": 10,
+            "x": 24.46,
+            "y": "one-carbon metabolic process"
         },
         {
-            "id": "Target",
-            "name": "Target",
-            "category": "Target",
-            "symbolSize": [
-                20,
-                20
-            ]
+            "color": 16.1332092888,
+            "size": 11,
+            "x": 18.35,
+            "y": "bicarbonate transport"
         },
         {
-            "id": "Disease",
-            "name": "Disease",
-            "category": "Disease",
-            "symbolSize": [
-                20,
-                20
-            ]
+            "color": 16.1332092888,
+            "size": 19,
+            "x": 31.69,
+            "y": "intracellular receptor signaling pathway"
         },
         {
-            "id": "CPM",
-            "name": "CPM",
-            "category": "CPM",
-            "symbolSize": [
-                20,
-                20
-            ]
-        },
-        {
-            "id": "CPM1",
-            "name": "CPM1",
-            "category": "CPM"
-        },
-        {
-            "id": "CPM2",
-            "name": "CPM2",
-            "category": "CPM"
-        },
-        {
-            "id": "HERB1",
-            "name": "HERB1",
-            "category": "Herb"
-        },
-        {
-            "id": "HERB2",
-            "name": "HERB2",
-            "category": "Herb"
-        },
-        {
-            "id": "Compound1",
-            "name": "Compound1",
-            "category": "Compound"
-        },
-        {
-            "id": "Compound2",
-            "name": "Compound2",
-            "category": "Compound"
-        },
-        {
-            "id": "Target1",
-            "name": "Target1",
-            "category": "Target"
-        },
-        {
-            "id": "Target2",
-            "name": "Target2",
-            "category": "Target"
-        },
-        {
-            "id": "Disease1",
-            "name": "Disease1",
-            "category": "Disease"
-        },
-        {
-            "id": "Disease2",
-            "name": "Disease2",
-            "category": "Disease"
+            "color": 16.0137356356,
+            "size": 16,
+            "x": 14.68,
+            "y": "chloride transport"
         }
     ],
-    "link": [
-        {
-            "source": "Herb",
-            "target": "Compound"
-        },
-        {
-            "source": "Compound",
-            "target": "Target"
-        },
-        {
-            "source": "Disease",
-            "target": "CPM"
-        },
-        {
-            "source": "CPM",
-            "target": "Herb"
-        },
-        {
-            "source": "Herb",
-            "target": "HERB1"
-        },
-        {
-            "source": "Herb",
-            "target": "HERB2"
-        },
-        {
-            "source": "Compound",
-            "target": "Compound1"
-        },
-        {
-            "source": "Compound",
-            "target": "Compound2"
-        },
-        {
-            "source": "Target",
-            "target": "Target1"
-        },
-        {
-            "source": "Target",
-            "target": "Target2"
-        },
-        {
-            "source": "Disease",
-            "target": "Disease1"
-        },
-        {
-            "source": "Disease",
-            "target": "Disease2"
-        },
-        {
-            "source": "CPM",
-            "target": "CPM1"
-        },
-        {
-            "source": "CPM",
-            "target": "CPM2"
-        }
-    ]
+    "y_range": [
+        "steroid hormone mediated signaling pathway",
+        "one-carbon metabolic process",
+        "bicarbonate transport",
+        "intracellular receptor signaling pathway",
+        "chloride transport"
+    ],
+    "x_min": 10,
+    "x_max": 35,
+    "color_min": 14,
+    "color_max": 17,
+    "size_min": 10,
+    "size_max": 24
 }
